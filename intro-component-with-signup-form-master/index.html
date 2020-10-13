@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="txt">
+      <h1>Learn to code by watching others</h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.
+      </p>
+    </div>
+    <div class="form-container">
+      <div class="box blue-box">
+        <p>
+          <strong>
+            Try it free 7 days
+          </strong>
+          then $20/mo. thereafter
+        </p>
+      </div>
+      <form class="box" id="form">
+        <div class="form-control" >
+          <input type="text" placeholder="First Name" id="firstname" autocomplete="none">
+          <img src="images/icon-error.svg" alt="">
+          <small>
+            First Name cannot be empty
+          </small>
+        </div>
+        <div class="form-control">
+          <input type="text" placeholder="Last Name" id="lastname" autocomplete="none">
+          <img src="images/icon-error.svg" alt="">
+          <small>
+            Last Name cannot be empty
+          </small>
+        </div>
+        <div class="form-control">
+          <input type="email" placeholder="Email Address" id="email">
+          <img src="images/icon-error.svg" alt="">
+          <small>
+            Looks like this is not an email
+          </small>
+        </div>
+        <div class="form-control">
+          <input type="password" placeholder="Password" id="password">
+          <img src="images/icon-error.svg" alt="">
+          <small>
+            Password cannot be empty
+          </small>
+        </div>
+        <button>
+          Claim your free trial
+        </button>
+        <small class="term">
+          By clicking the button, you are agreeing to our <a href="#">Terms and Services</a> 
+        </small>
+      </form>
+    </div>
+  </div>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io/dashboard">Frontend Mentor</a> Coded by <a href="https://hakeemdev.netlify.app/">Hakeem</a>
+  </footer>
+  <script>
+    const form=document.getElementById("form")
+
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      const firstName= form['firstname'].value;
+      const lastName=form['lastname'].value;
+      const email=form['email'].value;
+      const password=form['password'].value;
+      
+      firstName===''?addErrorTo('firstname'):isValid('firstname');
+      lastName===''?addErrorTo('lastname'):isValid('lastname');
+      email===''?addErrorTo('email'):isValid('email');
+      password===''?addErrorTo('password'):isValid('password');
+
+
+
+    });
+    function addErrorTo(filed){
+      const formControl= form[filed].parentNode;
+      formControl.classList.add('error');
+      const icon=formControl.querySelector('img');
+      const small= formControl.querySelector('small');
+      small.style.opacity='1';
+      small.style.animation= 'fade .5s linear';
+      icon.style.opacity='1';
+      icon.style.animation= 'fade .5s linear';
+    };
+    function isValid(filed){
+      const formControl= form[filed].parentNode;
+      formControl.classList.remove('error');
+      const icon=formControl.querySelector('img');
+      const small= formControl.querySelector('small');
+      small.style.opacity='0';
+      icon.style.opacity='0';
+    };
+  </script>
+</body>
+</html>

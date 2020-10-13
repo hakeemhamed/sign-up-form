@@ -1,0 +1,162 @@
+html{
+    padding: 0;
+    margin: 0;  
+}
+*{
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    background-color: hsl(0, 100%, 74%) ;
+    background-image: url(images/bg-intro-desktop.png);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/***/
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: auto 5%;
+    min-height: 100vh;
+}
+.txt, .form-container{
+    flex: 1;
+    padding: 0 20px;
+}
+h1{
+    font-size: 3rem;
+    line-height: 50px;
+}
+p{
+    font-size: 15px;
+    opacity: .9;
+}
+.box{
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.24);
+    text-align: center;
+    position: relative;
+}
+.blue-box{
+    margin-bottom: 1rem;
+    background-color: hsl(248, 32%, 49%);
+    padding: .1rem 1.5rem;
+}
+.form-control input{
+    width: 100%;
+    padding: 1rem;
+    border:1.5px solid #bbbbbb;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+}
+.form-control.error input{
+    border-color: hsl(0, 100%, 74%);
+    color: hsl(0, 100%, 74%);
+}
+.form-control.error input::placeholder{
+    color: hsl(0, 100%, 74%);
+}
+img{
+    opacity: 0;
+    position: absolute;
+    right: 2.5rem;
+    margin-top: .9rem;
+}
+.form-control small{
+    opacity: 0;
+    margin-bottom: .5rem;
+    float: right;
+    color: hsl(0, 100%, 74%);
+}
+
+input:focus{
+    border:1.5px solid hsla(248, 32%, 49%, 0.726);
+}
+button{
+    width: 100%;
+    padding: 1rem;
+    border:2px solid hsla(154, 56%, 34%, 0.377);
+    border-radius: 5px;
+    box-shadow: 0 2px  hsla(154, 56%, 34%, 0.801);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    transition: transform .1s ease;
+    background-color: hsl(154, 59%, 51%);
+    margin-bottom: .5rem;
+}
+button:hover{
+    background: hsl(154, 57%, 39%);
+}
+button:active{
+    box-shadow: 0 0  hsla(154, 56%, 34%, 0.329);
+    transform: translateY(2px);
+}
+.term{
+    color: hsl(246, 25%, 77%);
+    font-weight: 600;
+}
+.term a{
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+}
+footer{
+    text-align: center;
+    font-size: 15px;
+}
+footer a{
+    font-weight: 600;
+    text-decoration: none;
+    color: hsl(248, 32%, 49%);
+}
+
+@keyframes fade{
+    0%{opacity: 0;}
+    40%{opacity: .3;}
+    80%{opacity: .7;}
+    100%{opacity: 1;}
+}
+@media screen and (max-width: 960px){
+    h1{
+        font-size: 2.5rem;
+    }
+    p{
+        font-size: 14px;
+    }
+    .form-control input, button{
+        font-size: 13px;
+    }
+    small{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 795px){
+    h1{
+        font-size: 2rem;
+    }
+    h1, p{
+        text-align: center;
+    }
+    .txt{
+        margin-bottom: 2rem;
+    }
+    .form-control input, button{
+        font-size: 12px;
+    }
+    .container{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+}
